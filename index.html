@@ -1,203 +1,69 @@
 <!DOCTYPE html>
 <html lang="kk">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZerdeLogic | Р‘С–Р»С–Рј Р±РµСЂСѓ СЌРєРѕР¶ТЇР№РµСЃС–</title>
+    <title>ZerdeLogic | Білім беру экожүйесі</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="glass.css">
     <link rel="stylesheet" href="animations.css">
 </head>
-
 <body>
     <div id="app">
-
-        <!-- Sidebar -->
         <aside class="sidebar glass-panel">
-            <div class="sidebar-logo" id="btn-reset-stats" title="РЎС‚Р°С‚РёСЃС‚РёРєР°РЅС‹ РЅУ©Р»РґРµСѓ" style="cursor: pointer;">
-                рџ§ 
-            </div>
+            <div class="sidebar-logo" id="btn-reset-stats" title="Статистиканы нөлдеу" style="cursor: pointer;">🧠</div>
             <nav class="nav-menu">
-                <button id="nav-tasks" class="nav-item active" title="РўР°РїСЃС‹СЂРјР°Р»Р°СЂ">
-                    <span class="icon">рџЋ®</span>
-                </button>
-                <button id="nav-stats" class="nav-item" title="РЎС‚Р°С‚РёСЃС‚РёРєР°">
-                    <span class="icon">рџ“Љ</span>
-                </button>
-                <button id="nav-awards" class="nav-item" title="РњР°СЂР°РїР°С‚С‚Р°СЂ">
-                    <span class="icon">рџЏ†</span>
-                </button>
-                <button id="btn-toggle-sound" class="nav-item" title="Р”С‹Р±С‹СЃС‚С‹ Т›РѕСЃСѓ/У©С€С–СЂСѓ">
-                    <span class="icon" id="sound-icon">рџ”Љ</span>
-                </button>
+                <button id="nav-tasks" class="nav-item active" title="Тапсырмалар"></button>
+                <button id="nav-stats" class="nav-item" title="Статистика">📊</button>
+                <button id="nav-awards" class="nav-item" title="Марапаттар"></button>
+                <button id="btn-toggle-sound" class="nav-item" title="Дыбысты қосу/өшіру"><span id="sound-icon"></span></button>
             </nav>
         </aside>
-
-        <!-- Main Content Area -->
         <div class="main-content">
-
-            <!-- Dashboard View -->
             <main id="dashboard" class="view active">
                 <header class="hero-banner">
                     <div class="hero-text">
-                        <h1>РЎУ™Р»РµРј, РћТ›СѓС€С‹! рџ‘‹</h1>
-                        <p>Р›РѕРіРёРєР°Р»С‹Т› РѕР№Р»Р°СѓРґС‹ РґР°РјС‹С‚Р°С‚С‹РЅ С‚Р°РїСЃС‹СЂРјР°Р»Р°СЂ</p>
+                        <h1>Сәлем, Оқушы! </h1>
+                        <p>Логикалық ойлауды дамытатын тапсырмалар</p>
                     </div>
                     <div class="user-stats-row">
-                        <div class="stat-badge">
-                            <span class="icon">рџ’Ћ</span> <span id="dash-total-points">0</span> <small>Т°РїР°Р№</small>
-                        </div>
-                        <div class="stat-badge">
-                            <span class="icon">в­ђ</span> <span id="dash-total-stars">0</span> <small>Р–Т±Р»РґС‹Р·</small>
-                        </div>
-                        <div class="stat-badge">
-                            <span class="icon">рџ”Ґ</span> 0 <small>РљТЇРЅ Т›Р°С‚Р°СЂС‹РЅР°РЅ</small>
-                        </div>
+                        <div class="stat-badge"> <span id="dash-total-points">0</span> <small>Ұпай</small></div>
+                        <div class="stat-badge"> <span id="dash-total-stars">0</span> <small>Жұлдыз</small></div>
+                        <div class="stat-badge"> 0 <small>Күн</small></div>
                     </div>
                 </header>
-
-                <div class="scroll-container" id="sections-container">
-                    <!-- Sections will be injected here -->
-                </div>
+                <div class="scroll-container" id="sections-container"></div>
             </main>
-
-            <!-- Statistics View -->
-            <main id="stats" class="view hidden">
-                <header class="hero-banner">
-                    <div class="hero-text">
-                        <h1>РћТ›Сѓ РЎР°РїР°СЂС‹ рџ“–</h1>
-                        <p>РљРµР»РµСЃС– РґРµТЈРіРµР№РіРµ Р¶РµС‚Сѓ ТЇС€С–РЅ 40 Р¶Т±Р»РґС‹Р· Р¶РёРЅР°!</p>
-                    </div>
-                    <div class="user-stats-row">
-                        <div class="stat-badge">
-                            <span class="icon">рџ”Ґ</span> <span id="stats-streak">3</span>
-                        </div>
-                        <div class="stat-badge">
-                            <span class="icon">рџ’Ћ</span> <span id="stats-total-points">0</span>
-                        </div>
-                        <div class="stat-badge">
-                            <span class="icon">в­ђ</span> <span id="stats-total-stars">980</span>
-                        </div>
-                    </div>
-                </header>
-
-                <div class="stats-cards-grid">
-                    <div class="stat-card">
-                        <div class="icon-box" style="background: #fee2e2;">в­ђ</div>
-                        <div class="stat-info">
-                            <div class="stat-value" id="card-stars">980</div>
-                            <div class="stat-label">Р–Р°Р»РїС‹ Р¶Т±Р»РґС‹Р·РґР°СЂ</div>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="icon-box" style="background: #fdf2f8;">рџ”Ґ</div>
-                        <div class="stat-info">
-                            <div class="stat-value" id="card-streak">3 РєТЇРЅ</div>
-                            <div class="stat-label">Р•ТЈ Т±Р·Р°Т› СЃРµСЂРёСЏ</div>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="icon-box" style="background: #ecfdf5;">вњ…</div>
-                        <div class="stat-info">
-                            <div class="stat-value" id="card-games">15</div>
-                            <div class="stat-label">РђСЏТ›С‚Р°Р»Т“Р°РЅ РѕР№С‹РЅРґР°СЂ</div>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="icon-box" style="background: #fffbeb;">рџЏ†</div>
-                        <div class="stat-info">
-                            <div class="stat-value" id="card-awards">6/10</div>
-                            <div class="stat-label">РњР°СЂР°РїР°С‚С‚Р°СЂ</div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="stats-title">РџСЂРѕРіСЂРµСЃСЃ РїРѕ РєР°С‚РµРіРѕСЂРёСЏРј</h2>
-                <div class="category-progress-list" id="category-progress-container">
-                    <!-- Progress items injected here -->
-                </div>
-            </main>
-
-            <!-- Awards View -->
-            <main id="awards" class="view hidden">
-                <header class="hero-banner" style="background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);">
-                    <div class="hero-text">
-                        <h1>РњРµРЅС–ТЈ Р–РµС‚С–СЃС‚С–РєС‚РµСЂС–Рј рџЏ†</h1>
-                        <p>Р‘Р°СЂР»С‹Т› РєСѓР±РѕРєС‚Р°СЂРґС‹ Р¶РёРЅР°Рї, ZerdeLogic Р±Р°С‚С‹СЂС‹ Р±РѕР»!</p>
-                    </div>
-                    <div class="award-count-badge">
-                        <div class="badge-value" id="awards-discovered-count">6/10</div>
-                        <div class="badge-label">РђРЁР«Р›Т’РђРќ РњРђР РђРџРђРўРўРђР </div>
-                    </div>
-                </header>
-
-                <h2 class="stats-title">РњР°СЂР°РїР°С‚С‚Р°СЂ СЃУ©СЂРµСЃС– рџЏ†</h2>
-                <div class="awards-grid" id="awards-container">
-                    <!-- Awards cards injected here -->
-                </div>
-            </main>
-
-            <!-- Game/Task View -->
+            <main id="stats" class="view hidden"></main>
+            <main id="awards" class="view hidden"></main>
             <main id="workspace" class="view hidden">
                 <div class="glass-panel task-container">
                     <header class="task-header">
-                        <button id="btn-back" class="glass-button icon-only">
-                            в¬…пёЏ РђСЂС‚Т›Р°
-                        </button>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 30%"></div>
-                        </div>
-                        <div class="task-lives">вќ¤пёЏвќ¤пёЏвќ¤пёЏ</div>
+                        <button id="btn-back" class="glass-button"> Артқа</button>
+                        <div class="progress-bar-container"><div class="progress-fill"></div></div>
+                        <div class="task-lives"></div>
                     </header>
-
                     <div class="task-body">
                         <div class="mascot-helper">
-                            <div id="mascot-img" class="float-anim"
-                                style="font-size: 5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">рџ¦Љ</div>
-                            <div class="bubble glass-panel" id="task-instruction">
-                                РўР°РїСЃС‹СЂРјР°РЅС‹ РѕСЂС‹РЅРґР°!
-                            </div>
+                            <div id="mascot-img" class="float-anim" style="font-size: 5rem;"></div>
+                            <div class="bubble glass-panel" id="task-instruction">Тапсырманы орында!</div>
                         </div>
-                        <div id="game-stage" class="game-stage">
-                            <!-- Engine renders game here -->
-                        </div>
+                        <div id="game-stage" class="game-stage"></div>
                     </div>
                 </div>
             </main>
-
         </div>
-
-        <!-- Victory Overlay -->
         <div id="victory-overlay" class="overlay hidden">
             <div class="glass-panel victory-card">
-                <h1 class="bounce">Р–Р°СЂР°Р№СЃС‹ТЈ! рџЋ‰</h1>
-                <div class="stars-anim">в­ђв­ђв­ђ</div>
-                <button id="btn-next-level" class="glass-button primary big-btn" style="display: none;">РљРµР»РµСЃС–</button>
-            </div>
-            <div id="confetti-container"></div>
-        </div>
-
-        <!-- Category Complete Overlay -->
-        <div id="category-complete-overlay" class="overlay hidden">
-            <div class="glass-panel victory-card" style="max-width: 500px;">
-                <div style="font-size: 6rem; margin-bottom: 20px;">рџЏ†</div>
-                <h1 class="bounce" style="font-size: 2.5rem; margin-bottom: 15px;">РўР°РјР°С€Р°!</h1>
-                <p style="font-size: 1.3rem; color: #64748b; margin-bottom: 30px;">Р‘Р°СЂР»С‹Т› С‚Р°РїСЃС‹СЂРјР°Р»Р°СЂ РѕСЂС‹РЅРґР°Р»РґС‹!</p>
-                <div class="stars-anim" style="font-size: 4rem; margin: 30px 0;">в­ђв­ђв­ђ</div>
-                <button id="btn-back-to-menu" class="glass-button primary big-btn"
-                    style="font-size: 1.3rem; padding: 18px 50px;">Р‘Р°СЃС‚С‹ Р±РµС‚РєРµ РѕСЂР°Р»Сѓ</button>
+                <h1 class="bounce">Жарайсың! </h1>
+                <div class="stars-anim"></div>
+                <button id="btn-next-level" class="glass-button primary big-btn" style="display: none;">Келесі</button>
             </div>
         </div>
     </div>
-
-    <!-- Scripts -->
-    <!-- Scripts (Loaded sequentially for file:// support) -->
     <script src="audio.js"></script>
     <script src="confetti.js"></script>
     <script src="data.js"></script>
@@ -234,5 +100,4 @@
     <script src="VisualMemory.js"></script>
     <script src="app.js"></script>
 </body>
-
 </html>
