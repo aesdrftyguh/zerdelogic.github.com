@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZerdeLogic | Білім беру экожүйесі</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="glass.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="sidebar-logo" id="btn-reset-stats" title="Статистиканы нөлдеу" style="cursor: pointer;">
+                🧠
+            </div>
+            <nav class="nav-menu">
+                <button id="nav-tasks" class="nav-item active" title="Тапсырмалар">
+                    <span class="icon">🎮</span>
+                </button>
+                <button id="nav-stats" class="nav-item" title="Статистика">
+                    <span class="icon">📊</span>
+                </button>
+                <button id="nav-awards" class="nav-item" title="Марапаттар">
+                    <span class="icon">🏆</span>
+                </button>
+                <button id="btn-toggle-sound" class="nav-item" title="Дыбысты қосу/өшіру">
+                    <span class="icon" id="sound-icon">🔊</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+
+            <!-- Dashboard View -->
+            <main id="dashboard" class="view active">
+                <header class="hero-banner">
+                    <div class="hero-text">
+                        <h1>Сәлем, Оқушы! 👋</h1>
+                        <p>Логикалық ойлауды дамытатын тапсырмалар</p>
+                    </div>
+                    <div class="user-stats-row">
+                        <div class="stat-badge">
+                            <span class="icon">💎</span> <span id="dash-total-points">0</span> <small>Ұпай</small>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="icon">⭐</span> <span id="dash-total-stars">0</span> <small>Жұлдыз</small>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="icon">🔥</span> 0 <small>Күн қатарынан</small>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="scroll-container" id="sections-container">
+                    <!-- Sections will be injected here -->
+                </div>
+            </main>
+
+            <!-- Statistics View -->
+            <main id="stats" class="view hidden">
+                <header class="hero-banner">
+                    <div class="hero-text">
+                        <h1>Оқу Сапары 📖</h1>
+                        <p>Келесі деңгейге жету үшін 40 жұлдыз жина!</p>
+                    </div>
+                    <div class="user-stats-row">
+                        <div class="stat-badge">
+                            <span class="icon">🔥</span> <span id="stats-streak">3</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="icon">💎</span> <span id="stats-total-points">0</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="icon">⭐</span> <span id="stats-total-stars">980</span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="stats-cards-grid">
+                    <div class="stat-card">
+                        <div class="icon-box" style="background: #fee2e2;">⭐</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="card-stars">980</div>
+                            <div class="stat-label">Жалпы жұлдыздар</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon-box" style="background: #fdf2f8;">🔥</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="card-streak">3 күн</div>
+                            <div class="stat-label">Ең ұзақ серия</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon-box" style="background: #ecfdf5;">✅</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="card-games">15</div>
+                            <div class="stat-label">Аяқталған ойындар</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon-box" style="background: #fffbeb;">🏆</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="card-awards">6/10</div>
+                            <div class="stat-label">Марапаттар</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="stats-title">Прогресс по категориям</h2>
+                <div class="category-progress-list" id="category-progress-container">
+                    <!-- Progress items injected here -->
+                </div>
+            </main>
+
+            <!-- Awards View -->
+            <main id="awards" class="view hidden">
+                <header class="hero-banner" style="background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);">
+                    <div class="hero-text">
+                        <h1>Менің Жетістіктерім 🏆</h1>
+                        <p>Барлық кубоктарды жинап, ZerdeLogic батыры бол!</p>
+                    </div>
+                    <div class="award-count-badge">
+                        <div class="badge-value" id="awards-discovered-count">6/10</div>
+                        <div class="badge-label">АШЫЛҒАН МАРАПАТТАР</div>
+                    </div>
+                </header>
+
+                <h2 class="stats-title">Марапаттар сөресі 🏆</h2>
+                <div class="awards-grid" id="awards-container">
+                    <!-- Awards cards injected here -->
+                </div>
+            </main>
+
+            <!-- Game/Task View -->
+            <main id="workspace" class="view hidden">
+                <div class="glass-panel task-container">
+                    <header class="task-header">
+                        <button id="btn-back" class="glass-button icon-only">
+                            ⬅️ Артқа
+                        </button>
+                        <div class="progress-bar-container">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                        <div class="task-lives">❤️❤️❤️</div>
+                    </header>
+
+                    <div class="task-body">
+                        <div class="mascot-helper">
+                            <div id="mascot-img" class="float-anim"
+                                style="font-size: 5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">🦊</div>
+                            <div class="bubble glass-panel" id="task-instruction">
+                                Тапсырманы орында!
+                            </div>
+                        </div>
+                        <div id="game-stage" class="game-stage">
+                            <!-- Engine renders game here -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+
+        <!-- Victory Overlay -->
+        <div id="victory-overlay" class="overlay hidden">
+            <div class="glass-panel victory-card">
+                <h1 class="bounce">Жарайсың! 🎉</h1>
+                <div class="stars-anim">⭐⭐⭐</div>
+                <button id="btn-next-level" class="glass-button primary big-btn" style="display: none;">Келесі</button>
+            </div>
+            <div id="confetti-container"></div>
+        </div>
+
+        <!-- Category Complete Overlay -->
+        <div id="category-complete-overlay" class="overlay hidden">
+            <div class="glass-panel victory-card" style="max-width: 500px;">
+                <div style="font-size: 6rem; margin-bottom: 20px;">🏆</div>
+                <h1 class="bounce" style="font-size: 2.5rem; margin-bottom: 15px;">Тамаша!</h1>
+                <p style="font-size: 1.3rem; color: #64748b; margin-bottom: 30px;">Барлық тапсырмалар орындалды!</p>
+                <div class="stars-anim" style="font-size: 4rem; margin: 30px 0;">⭐⭐⭐</div>
+                <button id="btn-back-to-menu" class="glass-button primary big-btn"
+                    style="font-size: 1.3rem; padding: 18px 50px;">Басты бетке оралу</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Scripts (Loaded sequentially for file:// support) -->
+    <script src="audio.js"></script>
+    <script src="confetti.js"></script>
+    <script src="data.js"></script>
+    <script src="Sorting.js"></script>
+    <script src="Matching.js"></script>
+    <script src="Sequence.js"></script>
+    <script src="OddOneOut.js"></script>
+    <script src="NextInSequence.js"></script>
+    <script src="CauseEffect.js"></script>
+    <script src="Spatial.js"></script>
+    <script src="Puzzle.js"></script>
+    <script src="Classification.js"></script>
+    <script src="ActionSequence.js"></script>
+    <script src="VisualLogic.js"></script>
+    <script src="TrueFalse.js"></script>
+    <script src="MathEquation.js"></script>
+    <script src="MathComparison.js"></script>
+    <script src="MathMissing.js"></script>
+    <script src="MultipleChoice.js"></script>
+    <script src="MemoryCards.js"></script>
+    <script src="TaskRunner.js"></script>
+    <script src="Symmetry.js"></script>
+    <script src="CubeCount.js"></script>
+    <script src="ShapeConstructor.js"></script>
+    <script src="Projection.js"></script>
+    <script src="WeightLab.js"></script>
+    <script src="StoreLab.js"></script>
+    <script src="BubbleMerge.js"></script>
+    <script src="BridgeBuilder.js"></script>
+    <script src="GroupMultiply.js"></script>
+    <script src="ShareDivide.js"></script>
+    <script src="Maze.js"></script>
+    <script src="Counting.js"></script>
+    <script src="VisualMemory.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
